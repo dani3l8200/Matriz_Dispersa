@@ -1,0 +1,73 @@
+digraph Matrix{
+	graph[bgcolor=black, fontcolor =white,label="USUARIOS", fontsize = 25];
+	edge[color = white];
+	 nodesep = 0.7;
+	 ranksep = 0.7;
+	 node[shape= box];
+	 Mt[label="Admin", width = 1.5,style=filled, fillcolor = firebrick1, group = 1];
+	//filas
+	U0 [label = "Max",pos="5.3, 3.5!", width = 1.5, style = filled, fillcolor = aquamarine2, group=1];
+	U1[label = "HP", width = 1.5, style = filled, fillcolor = aquamarine2, group=1];
+	U2[label = "Walmart", width = 1.5, style = filled, fillcolor = aquamarine2, group=1];
+	
+	//Linkear filas
+	U0->U1->U2[dir=both];
+		// Columnas
+	A0[label = "Guatemala", width = 1.5, style = filled, fillcolor = azure1, group=1];
+	A1[label = "Jutiapa", width = 1.5, style = filled, fillcolor = azure1, group=1];
+	A2[label = "Jalapa", width = 1.5, style = filled, fillcolor = azure1, group=1];
+	// Linkear columnas
+	A0->A1->A2[dir=both];
+	// Nodo raiz con primera fila y columna
+	Mt -> U0 [dir = both];
+	Mt -> A0 [dir=both];
+
+		// Colocar columnas de manera alineada
+	 {rank = same; Mt; A0; A1; A2; } 
+		// Creation of nodes
+		// Fila 0
+	N25_LJuan [label="Juan
+25",  width=1.5, group =27, style = filled, fillcolor = burlywood2];
+	N110_Lwilly [label="willy
+110",  width=1.5, group =112, style = filled, fillcolor = burlywood2];
+
+
+	// Fila 1
+	N100_Landes [label="andes
+100",  width=1.5, group =102, style = filled, fillcolor = burlywood2];
+	N40_LSusan [label="Susan
+40",  width=1.5, group =42, style = filled, fillcolor = burlywood2];
+	N50_LSusel [label="Susel
+50",  width=1.5, group =52, style = filled, fillcolor = burlywood2];
+
+
+	// Fila 2
+	N60_LROxana [label="ROxana
+60",  width=1.5, group =62, style = filled, fillcolor = burlywood2];
+
+
+	// Linkeando Fila 0
+	U0->N25_LJuan->N110_Lwilly [constraint=false,dir=both];
+
+{rank = same; U0; N25_LJuan; N110_Lwilly}
+
+	// Linkeando Fila 1
+	U1->N100_Landes->N40_LSusan->N50_LSusel [constraint=false,dir=both];
+
+{rank = same; U1; N100_Landes; N40_LSusan; N50_LSusel}
+
+	// Linkeando Fila 2
+	U2->N60_LROxana [constraint=false,dir=both];
+
+{rank = same; U2; N60_LROxana}
+
+	// Linkeando Columna 0
+	A0->N25_LJuan->N100_Landes[dir=both];
+
+	// Linkeando Columna 1
+	A1->N40_LSusan[dir=both];
+
+	// Linkeando Columna 2
+	A2->N110_Lwilly->N50_LSusel->N60_LROxana[dir=both];
+
+}
