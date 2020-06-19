@@ -1,7 +1,5 @@
 #include <iostream>
-#include "Matrix.h"
-using namespace std;
-
+#include "include/Matrix.h"
 int main()
 {
 	Matrix * s = new Matrix();
@@ -13,6 +11,8 @@ int main()
     s->inserteElement("Walmart", "Sebas", 90, "Jalapa");
     s->inserteElement("HP", "andes", 100, "Guatemala");
     s->inserteElement("Max", "willy", 110, "Jalapa");
+    s->inserteElement("Max", "Marcos", 1123, "Jutiapa");
+
 	s->generateReport();
     return 0;
 }

@@ -1,6 +1,7 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 #include <string>
+#include "Matrix.h"
 using namespace std;
 class nodeMatrix{
 	public:

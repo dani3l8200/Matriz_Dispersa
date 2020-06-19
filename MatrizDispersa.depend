@@ -1,12 +1,13 @@
 # depslib dependency file v1.0
-1591943212 source:c:\users\dani3l8200\downloads\matrizdispersa\main.cpp
+1592526681 source:c:\users\dani3l8200\downloads\matrizdispersa\main.cpp
 	<iostream>
+	"include/Matrix.h"
+
+1592513833 c:\users\dani3l8200\downloads\matrizdispersa\include\matrix.h
+	<string>
 	"Matrix.h"
 
-1591931801 c:\users\dani3l8200\downloads\matrizdispersa\include\matrix.h
-	<string>
-
-1591947487 source:c:\users\dani3l8200\downloads\matrizdispersa\src\matrix.cpp
+1591947684 source:c:\users\dani3l8200\downloads\matrizdispersa\src\matrix.cpp
 	"Matrix.h"
 	<string>
 	<cstring>

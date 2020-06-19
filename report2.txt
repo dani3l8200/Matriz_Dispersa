@@ -1,19 +1,21 @@
 digraph Matrix{
 	graph[bgcolor=black, fontcolor =white,label="USUARIOS", fontsize = 25];
 	edge[color = white];
+	 nodesep = 0.7;
+	 ranksep = 0.7;
 	 node[shape= box];
-	 Mt[label="-1,Admin", width = 1.5,style=filled, fillcolor = firebrick1, group = 1];
+	 Mt[label="Admin", width = 1.5,style=filled, fillcolor = firebrick1, group = 1];
 	//filas
-	U0 [label = "-1,Max",pos="5.3, 3.5!", width = 1.5, style = filled, fillcolor = aquamarine2, group=1];
-	U1[label = "-1,HP", width = 1.5, style = filled, fillcolor = aquamarine2, group=1];
-	U2[label = "-1,Walmart", width = 1.5, style = filled, fillcolor = aquamarine2, group=1];
+	U0 [label = "Max",pos="5.3, 3.5!", width = 1.5, style = filled, fillcolor = aquamarine2, group=1];
+	U1[label = "HP", width = 1.5, style = filled, fillcolor = aquamarine2, group=1];
+	U2[label = "Walmart", width = 1.5, style = filled, fillcolor = aquamarine2, group=1];
 	
 	//Linkear filas
 	U0->U1->U2[dir=both];
 		// Columnas
-	A0[label = "-1,Guatemala", width = 1.5, style = filled, fillcolor = azure1, group=1];
-	A1[label = "-1,Jutiapa", width = 1.5, style = filled, fillcolor = azure1, group=1];
-	A2[label = "-1,Jalapa", width = 1.5, style = filled, fillcolor = azure1, group=1];
+	A0[label = "Guatemala", width = 1.5, style = filled, fillcolor = azure1, group=1];
+	A1[label = "Jutiapa", width = 1.5, style = filled, fillcolor = azure1, group=1];
+	A2[label = "Jalapa", width = 1.5, style = filled, fillcolor = azure1, group=1];
 	// Linkear columnas
 	A0->A1->A2[dir=both];
 	// Nodo raiz con primera fila y columna
@@ -24,42 +26,48 @@ digraph Matrix{
 	 {rank = same; Mt; A0; A1; A2; } 
 		// Creation of nodes
 		// Fila 0
-	N25_LJuan [label=Juan,  width=1.5, group =27, style = filled, fillcolor = burlywood2];
-	N110_Lwilly [label=willy,  width=1.5, group =112, style = filled, fillcolor = burlywood2];
+	N25_LJuan [label="Juan
+25",  width=1.5, group =27, style = filled, fillcolor = burlywood2];
+	N1123_LMarcos [label="Marcos
+1123",  width=1.5, group =1125, style = filled, fillcolor = burlywood2];
 
 
 	// Fila 1
-	N100_Landes [label=andes,  width=1.5, group =102, style = filled, fillcolor = burlywood2];
-	N40_LSusan [label=Susan,  width=1.5, group =42, style = filled, fillcolor = burlywood2];
-	N50_LSusel [label=Susel,  width=1.5, group =52, style = filled, fillcolor = burlywood2];
+	N100_Landes [label="andes
+100",  width=1.5, group =102, style = filled, fillcolor = burlywood2];
+	N40_LSusan [label="Susan
+40",  width=1.5, group =42, style = filled, fillcolor = burlywood2];
+	N50_LSusel [label="Susel
+50",  width=1.5, group =52, style = filled, fillcolor = burlywood2];
 
 
 	// Fila 2
-	N60_LROxana [label=ROxana,  width=1.5, group =62, style = filled, fillcolor = burlywood2];
+	N60_LROxana [label="ROxana
+60",  width=1.5, group =62, style = filled, fillcolor = burlywood2];
 
 
 	// Linkeando Fila 0
-	U0->N25_LJuan[constraint=false,dir=both]->N110_Lwilly[constraint=false,dir=both] [dir=both];
+	U0->N25_LJuan->N1123_LMarcos [constraint=false,dir=both];
 
-{rank = same; U0; N25_LJuan; N110_Lwilly}
+{rank = same; U0; N25_LJuan; N1123_LMarcos}
 
 	// Linkeando Fila 1
-	U1->N100_Landes[constraint=false,dir=both]->N40_LSusan[constraint=false,dir=both]->N50_LSusel[constraint=false,dir=both] [dir=both];
+	U1->N100_Landes->N40_LSusan->N50_LSusel [constraint=false,dir=both];
 
 {rank = same; U1; N100_Landes; N40_LSusan; N50_LSusel}
 
 	// Linkeando Fila 2
-	U2->N60_LROxana[constraint=false,dir=both] [dir=both];
+	U2->N60_LROxana [constraint=false,dir=both];
 
 {rank = same; U2; N60_LROxana}
 
 	// Linkeando Columna 0
-	A0->N25_LJuan->N100_Landes;
+	A0->N25_LJuan->N100_Landes[dir=both];
 
 	// Linkeando Columna 1
-	A1->N40_LSusan;
+	A1->N1123_LMarcos->N40_LSusan[dir=both];
 
 	// Linkeando Columna 2
-	A2->N110_Lwilly->N50_LSusel->N60_LROxana;
+	A2->N110_Lwilly->N50_LSusel->N60_LROxana[dir=both];
 
 }
